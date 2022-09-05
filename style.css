@@ -1,0 +1,157 @@
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", "shrikhand", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  max-width: 768px;
+  margin: auto;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+}
+header a {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0px 10px 0px;
+}
+header img {
+  max-width: 44%;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+.btn__location {
+  width: 100%;
+  padding-left: 104px;
+}
+.btn--color {
+  background-image: linear-gradient(to bottom right, #ff79da, #9356dc);
+  color: white;
+  width: 220px;
+  height: 50px;
+  padding: 0px;
+  border-radius: 25px;
+}
+
+.fa-location-dot {
+  margin-right: 18px;
+}
+
+p {
+  font-weight: 400;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 290px;
+  padding: 0px 50px 0px 40px;
+  background-color: #f7f7f7;
+  text-align: center;
+}
+article h1 {
+  display: flex;
+  font-weight: 700;
+  font-size: x-large;
+  margin: 40px 0px 20px 0px;
+}
+article p {
+  font-weight: 300;
+  margin: 0px 0px 30px 0px;
+}
+article a {
+  text-decoration: none;
+}
+
+nav {
+  height: auto;
+  margin: 50px 20px 0px 20px;
+}
+nav p {
+  font-weight: 700;
+  font-size: x-large;
+  margin-bottom: 30px;
+}
+nav ol {
+  padding-left: 10px;
+  list-style-type: none;
+}
+nav li {
+  display: flex;
+  align-items: center;
+  background-color: #f7f7f7;
+  height: 75px;
+  width: 100%;
+  border-radius: 25px;
+  margin-bottom: 20px;
+}
+nav li:hover {
+  background-color: #f5edff;
+}
+nav li:hover .fa-solid {
+  color: #9356dc;
+}
+nav .list_number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #9356dc;
+  color: white;
+  border-radius: 25px;
+  width: 24px;
+  height: 24px;
+  margin: 0px 22px 0px -10px;
+}
+nav .fa-solid {
+  color: #7e7e7e;
+  margin-right: 27px;
+}
+
+section {
+  background-color: #f7f7f7;
+  margin-top: 70px;
+}
+section h2 {
+  padding: 60px 0px 0px 20px;
+}
+
+footer {
+  background-color: black;
+}
+footer p {
+  font-family: shrikhand;
+  color: white;
+}
+footer ul {
+  list-style-type: none;
+  margin: 25px 0px 37px 0px;
+  padding-left: 22px;
+}
+footer ul > li {
+  font-family: shrikhand;
+  padding-bottom: 10px;
+}
+footer a {
+  text-decoration: none;
+}
+footer li {
+  color: white;
+}
+
+.fa-utensils {
+  padding-right: 10px;
+}
+
+.fa-handshake-angle {
+  padding-right: 4px;
+}/*# sourceMappingURL=style.css.map */
