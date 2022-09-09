@@ -40,6 +40,7 @@ header img {
   height: 50px;
   padding: 0px;
   border-radius: 25px;
+  font-weight: 500;
 }
 
 .fa-location-dot {
@@ -48,9 +49,11 @@ header img {
 
 p {
   font-weight: 400;
+  margin: 0px;
+  padding: 0px;
 }
 
-article {
+.top {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,17 +62,17 @@ article {
   background-color: #f7f7f7;
   text-align: center;
 }
-article h1 {
+.top h1 {
   display: flex;
   font-weight: 700;
   font-size: x-large;
   margin: 40px 0px 20px 0px;
 }
-article p {
+.top p {
   font-weight: 300;
   margin: 0px 0px 30px 0px;
 }
-article a {
+.top a {
   text-decoration: none;
 }
 
@@ -96,7 +99,7 @@ nav li {
   margin-bottom: 20px;
 }
 nav li:hover {
-  background-color: #f5edff;
+  background-color: #f4eefc;
 }
 nav li:hover .fa-solid {
   color: #9356dc;
@@ -117,41 +120,88 @@ nav .fa-solid {
   margin-right: 27px;
 }
 
+h2 {
+  padding: 50px 0px 0px 20px;
+  margin-bottom: 28px;
+}
+
 section {
   background-color: #f7f7f7;
   margin-top: 70px;
 }
-section h2 {
-  padding: 60px 0px 0px 20px;
+section a {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  height: 280px;
+  margin: 0px 20px 18px 20px;
+  text-decoration: none;
+  border-radius: 15px;
+}
+section .card {
+  width: 100%;
+  height: 280px;
+}
+section .card_new {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 14px;
+  border-radius: 2px;
+  width: 80px;
+  height: 30px;
+  background-color: #99e2d0;
+  color: #278870;
+  margin: 0px;
+}
+section .card_img {
+  width: 100%;
+  height: 174px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+section .card_text {
+  display: flex;
+  justify-content: space-evenly;
+  color: black;
+}
+section .card .fa-heart {
+  background-color: pink;
+}
+section .card .fa-heart:focus {
+  color: red;
 }
 
 footer {
   background-color: black;
-}
-footer p {
-  font-family: shrikhand;
-  color: white;
 }
 footer ul {
   list-style-type: none;
   margin: 25px 0px 37px 0px;
   padding-left: 22px;
 }
-footer ul > li {
+footer ul li {
+  padding-bottom: 5px;
+}
+footer ul li:nth-child(1) {
+  color: white;
   font-family: shrikhand;
   padding-bottom: 10px;
 }
 footer a {
   text-decoration: none;
-}
-footer li {
   color: white;
 }
 
 .fa-utensils {
-  padding-right: 10px;
+  font-size: 14px;
+  margin-right: 10px;
 }
 
 .fa-handshake-angle {
-  padding-right: 4px;
+  font-size: 12px;
+  margin-right: 13px;
 }/*# sourceMappingURL=style.css.map */
