@@ -87,8 +87,7 @@ p{
     }
 }
 
-nav{
-    height: auto;
+aside{
     margin: 50px 20px 0px 20px;
 
     p{
@@ -151,57 +150,64 @@ section{
 
     a{
         display: flex;
-        flex-direction: column;
         background-color: white;
         height: 280px;
         margin: 0px 20px 18px 20px;
         text-decoration: none;
         border-radius: 15px;
     }
-    
-    .card{
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 280px;
+
+    &_new{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-self: flex-end;
+        position: relative;
+        left: -13px;
+        bottom: 161px;
+        font-weight: 500;
+        font-size: 14px;
+        border-radius: 2px;
+        width: 80px;
+        height: 30px;
+        background-color: $color-third;
+        color: darken($color-third, $amount: 40);
+        margin: 0px;
+    }
+
+    &_img{
         width: 100%;
-        height: 280px;
+        height: 174px;
+        object-fit: cover;
+        border-radius: 15px 15px 0px 0px;
 
-        &_new{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: 500;
-            font-size: 14px;
-            border-radius: 2px;
-            width: 80px;
-            height: 30px;
-            background-color: $color-third;
-            color: darken($color-third, $amount: 40);
-            margin: 0px;
-        }
+    }
 
-        &_img{
-            width: 100%;
-            height: 174px;
-            object-fit: cover;
-            border-top-left-radius: 15px;
-            border-top-right-radius: 15px;
-        }
+    &_text{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        color: black;
+    }
 
-        &_text{
-            display: flex;
-            justify-content: space-evenly;
-            color: black;
-        }
+    &_restaurant{
+        margin-left: 14px;
+    }
 
-        .fa-heart{
-            background-color: pink;
-            
-            &:focus{
-                color: red;
-            }
+    .fa-heart{
+        
+        &:hover{
+            height: 100%;                
         }
     }
 }
-
-
 
 footer{
     background-color: black;

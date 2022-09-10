@@ -76,20 +76,19 @@ p {
   text-decoration: none;
 }
 
-nav {
-  height: auto;
+aside {
   margin: 50px 20px 0px 20px;
 }
-nav p {
+aside p {
   font-weight: 700;
   font-size: x-large;
   margin-bottom: 30px;
 }
-nav ol {
+aside ol {
   padding-left: 10px;
   list-style-type: none;
 }
-nav li {
+aside li {
   display: flex;
   align-items: center;
   background-color: #f7f7f7;
@@ -98,13 +97,13 @@ nav li {
   border-radius: 25px;
   margin-bottom: 20px;
 }
-nav li:hover {
+aside li:hover {
   background-color: #f4eefc;
 }
-nav li:hover .fa-solid {
+aside li:hover .fa-solid {
   color: #9356dc;
 }
-nav .list_number {
+aside .list_number {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -115,7 +114,7 @@ nav .list_number {
   height: 24px;
   margin: 0px 22px 0px -10px;
 }
-nav .fa-solid {
+aside .fa-solid {
   color: #7e7e7e;
   margin-right: 27px;
 }
@@ -131,21 +130,27 @@ section {
 }
 section a {
   display: flex;
-  flex-direction: column;
   background-color: white;
   height: 280px;
   margin: 0px 20px 18px 20px;
   text-decoration: none;
   border-radius: 15px;
 }
-section .card {
+
+.card {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 280px;
 }
-section .card_new {
+.card_new {
   display: flex;
   justify-content: center;
   align-items: center;
+  align-self: flex-end;
+  position: relative;
+  left: -13px;
+  bottom: 161px;
   font-weight: 500;
   font-size: 14px;
   border-radius: 2px;
@@ -155,24 +160,24 @@ section .card_new {
   color: #278870;
   margin: 0px;
 }
-section .card_img {
+.card_img {
   width: 100%;
   height: 174px;
   -o-object-fit: cover;
      object-fit: cover;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+  border-radius: 15px 15px 0px 0px;
 }
-section .card_text {
+.card_text {
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   color: black;
 }
-section .card .fa-heart {
-  background-color: pink;
+.card_restaurant {
+  margin-left: 14px;
 }
-section .card .fa-heart:focus {
-  color: red;
+.card .fa-heart:hover {
+  height: 100%;
 }
 
 footer {
