@@ -4,33 +4,125 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="normalize.css">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="/assets/css/normalize.css">
+        <link rel="stylesheet" href="/assets/css/style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">  
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/ffe380ae43.js" crossorigin="anonymous"></script>
-        <title>Le délice des sens</title>
+        <title>Ohmyfood - Le délice des sens</title>
     </head>
 
     <body>
 
         <!-- header -->
 
-        <header>
-
+        <header class="menu">
+            <a href="/index.html">
+                <i class="fa-solid fa-arrow-left"></i>
+                <img src="/assets/images/logo/ohmyfood@2x.svg" alt="logo">
+            </a>
         </header>
 
         <!-- main-->
 
         <main>
-            restaurant_4
+
+            <img class="menu_img" src="/assets/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="restaurant_4">
+
+            <section class="menu_complet">
+                <div class="menu_restaurant">
+                    <p>Le délice des sens</p>
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+
+                <section class="entree">
+                    <ul>
+                        <li><p class="menu_title">ENTRÉES</p></li>
+
+                        <li class="menu_card">
+                            <p class="menu_principal">Tartare de thon</p>
+                            <p class="menu_accompagnement">Assaisonné au yuzu</p>
+                            <p class="menu_prix">25€</p>
+                        </li>
+
+                        <li class="menu_card">
+                            <p class="menu_principal">Bouchée de homard croustillant </p>
+                            <p class="menu_accompagnement">Et sa farandole de petits légumes</p>
+                            <p class="menu_prix">35€</p>
+                        </li>
+
+                        <li class="menu_card">
+                            <p class="menu_principal">Velouté de cèpes </p>
+                            <p class="menu_accompagnement">Aux truffes</p>
+                            <p class="menu_prix">20€</p>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="plats">
+                    <ul>
+                        <li><p class="menu_title">PLATS</p></li>
+
+                        <li class="menu_card">
+                            <p class="menu_principal">Poulet rôti aux herbes de Provence </p>
+                            <p class="menu_accompagnement">Et sa crème de truffe</p>
+                            <p class="menu_prix">40€</p>
+                        </li>
+
+                        <li class="menu_card">
+                            <p class="menu_principal">Langouste rôtie </p>
+                            <p class="menu_accompagnement">Et ses légumes de saison</p>
+                            <p class="menu_prix">35€</p>
+                        </li>
+
+                        <li class="menu_card">
+                            <p class="menu_principal">Côte de boeuf Angus </p>
+                            <p class="menu_accompagnement">Et sa purée de panais</p>
+                            <p class="menu_prix">35€</p>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="dessert">
+                    <ul>
+                        <li><p class="menu_title">DESSERTS</p></li>
+
+                        <li class="menu_card">
+                            <p class="menu_principal">Farandole de desserts</p>
+                            <p class="menu_accompagnement">Du chef</p>
+                            <p class="menu_prix">18€</p>
+                        </li>
+
+                        <li class="menu_card">
+                            <p class="menu_principal">Crème brulée </p>
+                            <p class="menu_accompagnement">Revisitée</p>
+                            <p class="menu_prix">22€</p>
+                        </li>
+
+                        <li class="menu_card">
+                            <p class="menu_principal">Tiramisu</p>
+                            <p class="menu_accompagnement">À la noisette</p>
+                            <p class="menu_prix">23€</p>
+                        </li>
+                    </ul>
+                </section>
+
+                <button class="btn btn--color btn_commander">Commander</button>
+
+            </section>
         </main>
 
         <!-- footer -->
 
         <footer>
-
+            <ul>
+                <li><a href="/index.html">Ohmyfood</a></li>
+                <li><a href="#"><i class="fa-solid fa-utensils fa-fw"></i>Proposer un restaurant</a></li>
+                <li><a href="#"><i class="fa-solid fa-handshake-angle fa-fw"></i>Devenir partenaire</a></li>
+                <li><a href="#">Mentions légales</a></li>
+                <li><a href="mailto:paul@ohmyfood.fr">Contact</a></li>
+            </ul> 
         </footer>
     </body>
 </html>

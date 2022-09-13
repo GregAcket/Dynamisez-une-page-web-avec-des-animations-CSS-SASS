@@ -13,6 +13,8 @@ body {
 header {
   display: flex;
   flex-direction: column;
+  box-shadow: #c4c4c4 0px 2px 5px 0px;
+  z-index: 1;
 }
 header a {
   display: flex;
@@ -21,6 +23,11 @@ header a {
 }
 header img {
   max-width: 44%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
 }
 
 .btn {
@@ -32,7 +39,6 @@ header img {
 .btn__location {
   width: 100%;
   height: 50px;
-  box-shadow: inset #c4c4c4 0px 2px 3px 0px;
 }
 .btn--color {
   background-image: linear-gradient(to bottom right, #ff79da, #9356dc);
@@ -42,6 +48,16 @@ header img {
   padding: 0px;
   border-radius: 25px;
   font-weight: 500;
+  box-shadow: #dedede 0px 4px 10px 2px;
+}
+.btn--color:hover {
+  background-image: none;
+  background-color: #ff83dd;
+  box-shadow: #c4c4c4 0px 4px 10px 2px;
+}
+.btn_commander {
+  width: 186px;
+  margin-top: 25px;
 }
 
 .fa-location-dot {
@@ -101,6 +117,7 @@ aside li {
 }
 aside li:hover {
   background-color: #f4eefc;
+  box-shadow: #c4c4c4 0px 4px 10px 2px;
 }
 aside li:hover .fa-solid {
   color: #9356dc;
@@ -128,14 +145,15 @@ aside .fa-solid {
 h2 {
   padding: 50px 0px 0px 20px;
   margin-bottom: 28px;
+  margin-top: 0px;
 }
 
-section {
+#restaurant {
   background-color: #f7f7f7;
-  margin-top: 70px;
+  margin-top: 50px;
   padding-bottom: 44px;
 }
-section a {
+#restaurant a {
   display: flex;
   background-color: white;
   height: 250px;
@@ -149,6 +167,11 @@ section a {
   flex-wrap: wrap;
   width: 100%;
   height: 250px;
+  border-radius: 25px;
+  box-shadow: #dedede 0px 4px 10px 2px;
+}
+.card:hover {
+  box-shadow: #c4c4c4 0px 4px 10px 2px;
 }
 .card_new {
   display: flex;
@@ -248,7 +271,7 @@ footer li:nth-child(1) {
 }
 footer li:nth-child(1) a {
   color: white;
-  font-family: shrikhand;
+  font-family: "shrikhand";
 }
 footer a {
   text-decoration: none;
@@ -263,4 +286,125 @@ footer a {
 .fa-handshake-angle {
   font-size: 12px;
   margin-right: 13px;
+}
+
+/* scss pages restau */
+.menu {
+  box-shadow: none;
+}
+.menu a {
+  align-items: center;
+  text-decoration: none;
+}
+.menu .fa-arrow-left {
+  position: absolute;
+  left: 23px;
+  color: black;
+  font-size: 20px;
+}
+.menu_img {
+  min-width: 100%;
+}
+.menu_complet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f7f7f7;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  padding: 38px 12px 65px 14px;
+  margin-top: -40px;
+}
+.menu_restaurant {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 100%;
+  margin-bottom: 10px;
+}
+.menu_restaurant p {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-family: "shrikhand";
+  font-weight: 500;
+  font-size: 29px;
+  padding-left: 6px;
+}
+.menu_restaurant .fa-heart {
+  font-size: 25px;
+  height: 25px;
+  margin-right: 26px;
+}
+.menu_restaurant .fa-heart:hover {
+  background-image: linear-gradient(to top right, #ff79da, #9356dc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  -webkit-animation: 300ms ease-out forwards normal fill;
+          animation: 300ms ease-out forwards normal fill;
+}
+@keyframes fill {
+  from {
+    height: 0px;
+    opacity: 0;
+  }
+  to {
+    height: 25px;
+    opacity: 1;
+  }
+}
+.menu_title {
+  border-bottom: 3px solid #99e2d0;
+  margin-left: 6px;
+  margin-bottom: 14px;
+  padding-bottom: 5px;
+  width: 40px;
+}
+.menu_card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: white;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  padding: 10px 24px 10px 11px;
+  box-shadow: #dedede 0px 4px 10px 2px;
+}
+.menu_card:hover {
+  box-shadow: #c4c4c4 0px 4px 10px 2px;
+}
+.menu_principal {
+  width: 90%;
+  font-weight: 500;
+  font-size: 19px;
+  margin-bottom: 5px;
+}
+.menu_accompagnement {
+  font-weight: 100;
+}
+.menu_prix {
+  font-weight: 500;
+}
+
+ul {
+  list-style: none;
+  padding: 0px;
+}
+
+.entree {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.plats {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.dessert {
+  min-width: 100%;
+  margin-top: 10px;
+  margin-bottom: 15px;
 }/*# sourceMappingURL=style.css.map */
