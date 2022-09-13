@@ -32,7 +32,7 @@ header img {
 .btn__location {
   width: 100%;
   height: 50px;
-  padding-left: 104px;
+  box-shadow: inset #c4c4c4 0px 2px 3px 0px;
 }
 .btn--color {
   background-image: linear-gradient(to bottom right, #ff79da, #9356dc);
@@ -97,6 +97,7 @@ aside li {
   width: 100%;
   border-radius: 25px;
   margin-bottom: 20px;
+  box-shadow: #dedede 0px 4px 10px 2px;
 }
 aside li:hover {
   background-color: #f4eefc;
@@ -104,7 +105,7 @@ aside li:hover {
 aside li:hover .fa-solid {
   color: #9356dc;
 }
-aside .list_number {
+aside .list_numbers {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -114,9 +115,14 @@ aside .list_number {
   width: 24px;
   height: 24px;
   margin: 0px 22px 0px -10px;
+  padding-top: 4px;
+  font-size: 14px;
+  font-weight: 500;
 }
 aside .fa-solid {
   margin-right: 27px;
+  font-size: 18px;
+  color: #919191;
 }
 
 h2 {
@@ -127,7 +133,7 @@ h2 {
 section {
   background-color: #f7f7f7;
   margin-top: 70px;
-  padding-bottom: 64px;
+  padding-bottom: 44px;
 }
 section a {
   display: flex;
@@ -141,7 +147,6 @@ section a {
 .card {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
   width: 100%;
   height: 250px;
 }
@@ -150,8 +155,8 @@ section a {
   justify-content: center;
   align-items: center;
   position: relative;
-  left: -11px;
-  bottom: 207px;
+  right: 11px;
+  bottom: 202px;
   font-weight: 500;
   font-size: 14px;
   border-radius: 2px;
@@ -159,23 +164,21 @@ section a {
   height: 30px;
   background-color: #99e2d0;
   color: #278870;
-  margin: 0px;
 }
 .card_img {
   min-width: 100%;
-  height: 174px;
+  max-height: 70%;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 15px 15px 0px 0px;
 }
 .card_text {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   color: black;
-  margin-top: 20px;
   min-width: 100%;
+  max-height: 30%;
 }
 .card_restaurant {
   display: flex;
@@ -186,6 +189,7 @@ section a {
 .card_restaurant-name {
   font-weight: 900;
   font-size: 18px;
+  padding-top: 5px;
 }
 .card_restaurant-place {
   font-weight: 100;
@@ -194,7 +198,7 @@ section a {
 .card .fa-heart {
   position: relative;
   right: 25px;
-  bottom: 2px;
+  top: 8px;
   font-size: 25px;
   height: 25px;
 }
@@ -204,8 +208,8 @@ section a {
   -webkit-background-clip: text;
   color: transparent;
   font-weight: 700;
-  -webkit-animation: 300ms ease-in forwards normal fill;
-          animation: 300ms ease-in forwards normal fill;
+  -webkit-animation: 300ms ease-out forwards normal fill;
+          animation: 300ms ease-out forwards normal fill;
 }
 @-webkit-keyframes fill {
   from {
@@ -229,7 +233,7 @@ section a {
 }
 
 footer {
-  background-color: black;
+  background-color: #353535;
 }
 footer ul {
   list-style-type: none;
@@ -237,12 +241,14 @@ footer ul {
   padding-left: 22px;
 }
 footer li {
-  padding-bottom: 5px;
+  padding-bottom: 0.5em;
+}
+footer li:nth-child(1) {
+  margin-bottom: 15px;
 }
 footer li:nth-child(1) a {
   color: white;
   font-family: shrikhand;
-  padding-bottom: 10px;
 }
 footer a {
   text-decoration: none;

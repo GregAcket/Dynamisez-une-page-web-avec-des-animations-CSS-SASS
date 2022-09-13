@@ -2,6 +2,9 @@ $color-first: #9356dc;
 $color-second: #ff79da;
 $color-third: #99e2d0;
 $color-fourth:#f7f7f7;
+$color-fifth: darken($color-fourth, $amount: 40);
+$color-border-box-shadow: darken($color-fourth, $amount: 20);
+$color-box-shadow: darken($color-fourth, $amount: 10);
 
 *{
     box-sizing: border-box;
@@ -38,7 +41,7 @@ header{
     &__location{
         width: 100%;
         height: 50px;
-        padding-left: 104px;
+        box-shadow: inset $color-border-box-shadow 0px 2px 3px 0px;
     }
     &--color{
         background-image: linear-gradient(to bottom right, $color-second, $color-first);
@@ -109,6 +112,7 @@ aside{
         width: 100%;
         border-radius: 25px;
         margin-bottom: 20px;
+        box-shadow: $color-box-shadow 0px 4px 10px 2px;
 
         &:hover{
             background-color: lighten($color-first, $amount: 36);
@@ -119,7 +123,7 @@ aside{
         }
     }
         
-    .list_number{
+    .list_numbers{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -129,11 +133,16 @@ aside{
         width: 24px;
         height: 24px;
         margin: 0px 22px 0px -10px;
+        padding-top: 4px;
+        font-size: 14px;
+        font-weight: 500;
     }
 
 
     .fa-solid{
         margin-right: 27px;
+        font-size: 18px;
+        color: $color-fifth;
     }
 }
 
@@ -146,7 +155,7 @@ section{
 
     background-color: $color-fourth;
     margin-top: 70px;
-    padding-bottom: 64px;
+    padding-bottom: 44px;
 
     a{
         display: flex;
@@ -161,7 +170,6 @@ section{
 .card{
     display: flex;
     flex-wrap: wrap;
-    flex-direction:row;
     width: 100%;
     height: 250px;
 
@@ -170,8 +178,8 @@ section{
         justify-content: center;
         align-items: center;
         position: relative;
-        left: -11px;
-        bottom: 207px;
+        right: 11px;
+        bottom: 202px;
         font-weight: 500;
         font-size: 14px;
         border-radius: 2px;
@@ -179,12 +187,11 @@ section{
         height: 30px;
         background-color: $color-third;
         color: darken($color-third, $amount: 40);
-        margin: 0px;
     }
 
     &_img{
         min-width: 100%;
-        height: 174px;
+        max-height: 70%;
         object-fit: cover;
         border-radius: 15px 15px 0px 0px;
 
@@ -192,12 +199,11 @@ section{
 
     &_text{
         display: flex;
-        flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
         color: black;
-        margin-top: 20px;
         min-width: 100%;
+        max-height: 30%;
     }
 
     &_restaurant{
@@ -209,6 +215,7 @@ section{
         &-name{
             font-weight: 900;
             font-size: 18px;
+            padding-top: 5px;
         }
 
         &-place{
@@ -220,7 +227,7 @@ section{
     .fa-heart{
         position: relative;
         right: 25px;
-        bottom: 2px;
+        top: 8px;
         font-size: 25px;
         height: 25px;
 
@@ -230,7 +237,7 @@ section{
             -webkit-background-clip: text;
             color: transparent;
             font-weight: 700;
-            animation: 300ms ease-in forwards normal fill;            
+            animation: 300ms ease-out forwards normal fill;            
         }
 
         @keyframes fill {
@@ -247,7 +254,7 @@ section{
 }
 
 footer{
-    background-color: black;
+    background-color: #353535;
 
     ul{
         list-style-type: none;
@@ -256,12 +263,15 @@ footer{
     }
 
     li{
-        padding-bottom: 5px;
+        padding-bottom: 0.5em;
 
-        &:nth-child(1) a{
-            color: white;
-            font-family: shrikhand;
-            padding-bottom: 10px;
+        &:nth-child(1){
+            margin-bottom: 15px;
+
+            a{
+                color: white;
+                font-family: shrikhand;
+            }        
         }
     }
 
