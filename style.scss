@@ -404,27 +404,73 @@ footer{
 
     &_card{
         display: flex;
-        flex-wrap: wrap;
         justify-content: space-between;
         background-color: white;
         margin-bottom: 15px;
         border-radius: 15px;
-        padding: 10px 24px 10px 11px;
         box-shadow: $color-box-shadow 0px 4px 10px 2px;
-        
-        &:hover{
-            box-shadow: darken($color: $color-box-shadow, $amount: 10) 0px 4px 10px 2px;
+        animation: 1000ms ease-out forwards normal move;
+        opacity: 0;
+
+
+        &:nth-child(3){
+            animation-delay: 200ms;
+        }
+
+        &:nth-child(4){
+            animation-delay: 400ms;
         }
     }
 
+    @keyframes move {
+        from{
+            translate: 0px 10px;
+        }
+        to{
+            translate: 0px 0px;
+            opacity: 1;
+        }
+    }
+
+    &_contenu{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        background-color: white;
+        min-width: 100%;
+        border-radius: 15px;
+        padding: 10px 24px 10px 11px;
+        &:hover{
+            animation: 1000ms ease-out forwards normal stretch;
+
+            .check{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-bottom-right-radius: 15px;
+                border-top-right-radius: 15px;
+                background-color: $color-third;                
+            }
+        }
+
+            @keyframes stretch {
+                from{
+                    min-width: 100%;
+                }to{
+                    min-width: 100%-10%;
+                }
+            }
+    }
+
     &_principal{
-        width: 90%;
+        width: 94%;
         font-weight: 500;
         font-size: 19px;
         margin-bottom: 5px;
     }
 
     &_accompagnement{
+        min-width: 88%;
         font-weight: 100;
 
     }
@@ -441,11 +487,13 @@ ul{
 }
 
 .entree{
+    min-width: 100%;
     margin-top: 10px;
     margin-bottom: 5px;
 }
 
 .plats{
+    min-width: 100%;
     margin-top: 5px;
     margin-bottom: 10px;
 }
@@ -454,5 +502,33 @@ ul{
     min-width: 100%;
     margin-top: 10px;
     margin-bottom: 15px;
+}
 
+.check{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: $color-third;
+    min-width: 60px;
+    min-height: 100%;
+    }
+
+.fa-check{
+    background-color: white;
+    color: $color-third;
+    border-radius: 50%;
+    padding: 3px;
+    font-weight: 900;
+    animation: 1000ms ease-out forwards normal rotate;
+
+    @keyframes rotate {
+        from{
+            rotate: 90deg;
+        }
+        to{
+            rotate: 360deg;
+        }
+    }
 }
