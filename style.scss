@@ -392,11 +392,13 @@ footer{
     }
 
     &_title{
+        text-transform: uppercase;
         border-bottom: 3px solid $color-third;
         margin-left: 6px;
         margin-bottom: 14px;
         padding-bottom: 5px;
         width: 40px;
+        
     }
 
     &_card{
@@ -438,6 +440,7 @@ footer{
         padding: 10px 24px 10px 11px;
         margin-right: -60px;
         transition: margin-right 500ms ease;
+        z-index: 1;
 
 
         &:hover{
@@ -519,8 +522,7 @@ ul{
     border-bottom-right-radius: 15px;
     border-top-right-radius: 15px;
     background-color: $color-third;
-    min-width: 0px;
-    transition: min-width 500ms ease-in;
+    min-width: 60px;
 }
 
 .fa-check{

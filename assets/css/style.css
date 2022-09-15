@@ -354,6 +354,7 @@ footer a {
   }
 }
 .menu_title {
+  text-transform: uppercase;
   border-bottom: 3px solid #99e2d0;
   margin-left: 6px;
   margin-bottom: 14px;
@@ -407,6 +408,7 @@ footer a {
   padding: 10px 24px 10px 11px;
   margin-right: -60px;
   transition: margin-right 500ms ease;
+  z-index: 1;
 }
 .menu_contenu:hover {
   margin-right: 0px;
@@ -479,8 +481,7 @@ ul {
   border-bottom-right-radius: 15px;
   border-top-right-radius: 15px;
   background-color: #99e2d0;
-  min-width: 0px;
-  transition: min-width 500ms ease-in;
+  min-width: 60px;
 }
 
 .fa-check {
