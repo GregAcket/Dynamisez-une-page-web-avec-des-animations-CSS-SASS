@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
   font-family: "Roboto", "shrikhand", sans-serif;
@@ -11,18 +12,14 @@ body {
 }
 
 header {
-  display: flex;
   min-width: 100%;
-  flex-direction: column;
   box-shadow: #c4c4c4 0px 2px 5px 0px;
   z-index: 1;
 }
 header a {
   display: flex;
-  min-width: 100%;
-  justify-content: flex-start;
-  margin: 20px 0px 10px 0px;
-  align-items: center;
+  justify-content: center;
+  margin: 25px 0px 10px 0px;
   text-decoration: none;
 }
 header img {
@@ -297,6 +294,8 @@ footer a {
   box-shadow: none;
 }
 .menu .fa-arrow-left {
+  position: absolute;
+  left: 23px;
   color: black;
   font-size: 20px;
 }
@@ -304,26 +303,18 @@ footer a {
   min-width: 100%;
 }
 .menu_complet {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background-color: #f7f7f7;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
-  padding: 38px 12px 65px 14px;
-  margin-top: -40px;
+  padding: 35px 12px 65px 14px;
+  margin-top: -36px;
 }
 .menu_restaurant {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  min-width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 34px;
 }
 .menu_restaurant p {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
   font-family: "shrikhand";
   font-weight: 500;
   font-size: 29px;
@@ -332,7 +323,7 @@ footer a {
 .menu_restaurant .fa-heart {
   font-size: 25px;
   height: 25px;
-  margin-right: 26px;
+  margin-right: 20px;
 }
 .menu_restaurant .fa-heart:hover {
   background-image: linear-gradient(to top right, #ff79da, #9356dc);
@@ -342,16 +333,6 @@ footer a {
   font-weight: 700;
   -webkit-animation: 300ms ease-out forwards normal fill;
           animation: 300ms ease-out forwards normal fill;
-}
-@keyframes fill {
-  from {
-    height: 0px;
-    opacity: 0;
-  }
-  to {
-    height: 25px;
-    opacity: 1;
-  }
 }
 .menu_title {
   text-transform: uppercase;
@@ -363,7 +344,6 @@ footer a {
 }
 .menu_card {
   display: flex;
-  justify-content: space-between;
   background-color: white;
   margin-bottom: 15px;
   border-radius: 15px;
@@ -371,6 +351,9 @@ footer a {
   -webkit-animation: 1000ms ease-out forwards normal move;
           animation: 1000ms ease-out forwards normal move;
   opacity: 0;
+}
+.menu_card:hover {
+  box-shadow: #c4c4c4 0px 4px 10px 2px;
 }
 .menu_card:nth-child(3) {
   -webkit-animation-delay: 200ms;
@@ -380,6 +363,90 @@ footer a {
   -webkit-animation-delay: 400ms;
           animation-delay: 400ms;
 }
+.menu_contenu {
+  background-color: white;
+  width: 100%;
+  border-radius: 15px;
+  padding: 10px 24px 10px 11px;
+}
+.menu_contenu:hover {
+  margin-right: 0px;
+  direction: ltr;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu_contenu:hover > .menu_principal {
+  direction: ltr;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu_contenu:hover + .check {
+  width: 60px;
+}
+.menu_contenu:hover + .check > .fa-check {
+  transform: rotate(360deg);
+  -webkit-animation: 500ms linear forwards normal appear;
+          animation: 500ms linear forwards normal appear;
+}
+.menu_principal {
+  font-weight: 500;
+  font-size: 19px;
+  margin-bottom: 5px;
+}
+.menu_accompagnement {
+  font-weight: 100;
+  direction: ltr;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu_prix {
+  font-weight: 500;
+}
+
+ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.check {
+  position: relative;
+  border-bottom-right-radius: 13px;
+  border-top-right-radius: 13px;
+  background-color: #99e2d0;
+  width: 0px;
+  transition: width 500ms;
+}
+
+.fa-check {
+  position: relative;
+  background-color: white;
+  color: #99e2d0;
+  border-radius: 50%;
+  padding: 3px;
+  font-weight: 900;
+  opacity: 0;
+  transform: rotate(90deg);
+  transition: transform 500ms ease-in;
+  top: 33%;
+  left: 15px;
+}
+
+/* animation remplissage coeur*/
+@keyframes fill {
+  from {
+    height: 0px;
+    opacity: 0;
+  }
+  to {
+    height: 25px;
+    opacity: 1;
+  }
+}
+/*animation d'entrée des plats*/
 @-webkit-keyframes move {
   from {
     translate: 0px 10px;
@@ -398,103 +465,7 @@ footer a {
     opacity: 1;
   }
 }
-.menu_contenu {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  background-color: white;
-  width: 100%;
-  border-radius: 15px;
-  padding: 10px 24px 10px 11px;
-  margin-right: -60px;
-  transition: margin-right 500ms ease;
-  z-index: 1;
-}
-.menu_contenu:hover {
-  margin-right: 0px;
-}
-.menu_contenu:hover > .menu_principal {
-  direction: ltr;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.menu_contenu:hover > .menu_acompagnement {
-  direction: ltr;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.menu_contenu:hover + .check {
-  min-width: 60px;
-}
-.menu_contenu:hover + .check > .fa-check {
-  transform: rotate(360deg);
-  -webkit-animation: 300ms linear forwards normal appear;
-          animation: 300ms linear forwards normal appear;
-}
-.menu_principal {
-  width: 94%;
-  font-weight: 500;
-  font-size: 19px;
-  margin-bottom: 5px;
-}
-.menu_accompagnement {
-  min-width: 215px;
-  font-weight: 100;
-  direction: ltr;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.menu_prix {
-  font-weight: 500;
-}
-
-ul {
-  list-style: none;
-  padding: 0px;
-}
-
-.entree {
-  min-width: 100%;
-  margin-top: 10px;
-  margin-bottom: 5px;
-}
-
-.plats {
-  min-width: 100%;
-  margin-top: 5px;
-  margin-bottom: 10px;
-}
-
-.dessert {
-  min-width: 100%;
-  margin-top: 10px;
-  margin-bottom: 15px;
-}
-
-.check {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-bottom-right-radius: 15px;
-  border-top-right-radius: 15px;
-  background-color: #99e2d0;
-  min-width: 60px;
-}
-
-.fa-check {
-  position: absolute;
-  background-color: white;
-  color: #99e2d0;
-  border-radius: 50%;
-  padding: 3px;
-  font-weight: 900;
-  opacity: 0;
-  transform: rotate(90deg);
-  transition: transform 500ms ease-in;
-}
+/* animation rotation check */
 @-webkit-keyframes appear {
   from {
     opacity: 0;

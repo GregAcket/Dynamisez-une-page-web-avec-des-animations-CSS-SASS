@@ -19,18 +19,14 @@ body{
 }
 
 header{
-    display: flex;
     min-width: 100%;
-    flex-direction: column;
     box-shadow: $color-border-box-shadow 0px 2px 5px 0px;
     z-index: 1;
 
     a{
         display: flex;
-        min-width: 100%;
-        justify-content: flex-start;
-        margin: 20px 0px 10px 0px;
-        align-items: center;
+        justify-content: center;
+        margin: 25px 0px 10px 0px;
         text-decoration: none;
     }
 
@@ -329,6 +325,8 @@ footer{
     box-shadow: none;
 
     .fa-arrow-left{
+        position: absolute;
+        left: 23px;
         color: black;
         font-size: 20px;
     }
@@ -338,25 +336,19 @@ footer{
     }
 
     &_complet{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         background-color: $color-fourth;
         border-top-left-radius: 40px;
         border-top-right-radius: 40px;
-        padding: 38px 12px 65px 14px;
-        margin-top: -40px;
+        padding: 35px 12px 65px 14px;
+        margin-top: -36px;
     }
 
     &_restaurant{
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        min-width: 100%;
-        margin-bottom: 10px;
+        margin-bottom: 34px;
 
         p{
-            width: fit-content;
             font-family: 'shrikhand';
             font-weight: 500;
             font-size: 29px;
@@ -366,7 +358,7 @@ footer{
         .fa-heart{
             font-size: 25px;
             height: 25px;
-            margin-right: 26px;
+            margin-right: 20px;
 
     
             &:hover{
@@ -376,17 +368,6 @@ footer{
                 color: transparent;
                 font-weight: 700;
                 animation: 300ms ease-out forwards normal fill;            
-            }
-    
-            @keyframes fill {
-                from{
-                    height: 0px;
-                    opacity: 0;
-                }
-                to{
-                    height: 25px;
-                    opacity: 1;
-                }
             }
         }        
     }
@@ -403,13 +384,16 @@ footer{
 
     &_card{
         display: flex;
-        justify-content: space-between;
         background-color: white;
         margin-bottom: 15px;
         border-radius: 15px;
         box-shadow: $color-box-shadow 0px 4px 10px 2px;
         animation: 1000ms ease-out forwards normal move;
         opacity: 0;
+
+        &:hover{
+            box-shadow: darken($color: $color-box-shadow, $amount: 10) 0px 4px 10px 2px;
+        }
 
         &:nth-child(3){
             animation-delay: 200ms;
@@ -420,31 +404,19 @@ footer{
         }
     }
 
-    @keyframes move {
-        from{
-            translate: 0px 10px;
-        }
-        to{
-            translate: 0px 0px;
-            opacity: 1;
-        }
-    }
-
     &_contenu{
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
         background-color: white;
         width: 100%;
         border-radius: 15px;
         padding: 10px 24px 10px 11px;
-        margin-right: -60px;
-        transition: margin-right 500ms ease;
-        z-index: 1;
 
 
         &:hover{
             margin-right: 0px;
+            direction: ltr;     
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
 
             > .menu_principal{
                 direction: ltr;     
@@ -453,33 +425,24 @@ footer{
                 text-overflow: ellipsis;
             }
 
-            > .menu_acompagnement{
-                direction: ltr;     
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-
             & + .check{
-                min-width: 60px;
+                width: 60px;
 
                 & > .fa-check{
                     transform: rotate(360deg);
-                    animation: 300ms linear forwards normal appear;
+                    animation: 500ms linear forwards normal appear;
                 }
             }
         }
     }
 
     &_principal{
-        width: 94%;
         font-weight: 500;
         font-size: 19px;
         margin-bottom: 5px;
     }
 
     &_accompagnement{
-        min-width: 215px;
         font-weight: 100;
         direction: ltr;     
         white-space: nowrap;
@@ -495,38 +458,20 @@ footer{
 ul{
     list-style: none;
     padding: 0px;
-}
-
-.entree{
-    min-width: 100%;
-    margin-top: 10px;
-    margin-bottom: 5px;
-}
-
-.plats{
-    min-width: 100%;
-    margin-top: 5px;
-    margin-bottom: 10px;
-}
-
-.dessert{
-    min-width: 100%;
-    margin-top: 10px;
-    margin-bottom: 15px;
+    margin: 0px;
 }
 
 .check{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom-right-radius: 15px;
-    border-top-right-radius: 15px;
+    position: relative;
+    border-bottom-right-radius: 13px;
+    border-top-right-radius: 13px;
     background-color: $color-third;
-    min-width: 60px;
+    width: 0px;
+    transition: width 500ms;
 }
 
 .fa-check{
-    position: absolute;
+    position: relative;
     background-color: white;
     color: $color-third;
     border-radius: 50%;
@@ -535,12 +480,44 @@ ul{
     opacity: 0;
     transform: rotate(90deg);
     transition: transform 500ms ease-in;
+    top: 33%;
+    left: 15px;
+}
 
-    @keyframes appear{
-        from{
-            opacity: 0;
-        }to{
-            opacity: 1;
-        }
+
+/* animation remplissage coeur*/
+
+@keyframes fill {
+    from{
+        height: 0px;
+        opacity: 0;
+    }
+    to{
+        height: 25px;
+        opacity: 1;
+    }
+}
+
+
+/*animation d'entrée des plats*/
+
+@keyframes move {
+    from{
+        translate: 0px 10px;
+    }
+    to{
+        translate: 0px 0px;
+        opacity: 1;
+    }
+}
+
+
+/* animation rotation check */
+
+@keyframes appear{
+    from{
+        opacity: 0;
+    }to{
+        opacity: 1;
     }
 }
