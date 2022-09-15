@@ -12,14 +12,18 @@ body {
 
 header {
   display: flex;
+  min-width: 100%;
   flex-direction: column;
   box-shadow: #c4c4c4 0px 2px 5px 0px;
   z-index: 1;
 }
 header a {
   display: flex;
-  justify-content: center;
+  min-width: 100%;
+  justify-content: flex-start;
   margin: 20px 0px 10px 0px;
+  align-items: center;
+  text-decoration: none;
 }
 header img {
   max-width: 44%;
@@ -292,13 +296,7 @@ footer a {
 .menu {
   box-shadow: none;
 }
-.menu a {
-  align-items: center;
-  text-decoration: none;
-}
 .menu .fa-arrow-left {
-  position: absolute;
-  left: 23px;
   color: black;
   font-size: 20px;
 }
@@ -404,37 +402,34 @@ footer a {
   justify-content: space-between;
   flex-wrap: wrap;
   background-color: white;
-  min-width: 100%;
+  width: 100%;
   border-radius: 15px;
   padding: 10px 24px 10px 11px;
+  margin-right: -60px;
+  transition: margin-right 500ms ease;
 }
 .menu_contenu:hover {
-  -webkit-animation: 1000ms ease-out forwards normal stretch;
-          animation: 1000ms ease-out forwards normal stretch;
+  margin-right: 0px;
 }
-.menu_contenu:hover .check {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-bottom-right-radius: 15px;
-  border-top-right-radius: 15px;
-  background-color: #99e2d0;
+.menu_contenu:hover > .menu_principal {
+  direction: ltr;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-@-webkit-keyframes stretch {
-  from {
-    min-width: 100%;
-  }
-  to {
-    min-width: 90%;
-  }
+.menu_contenu:hover > .menu_acompagnement {
+  direction: ltr;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-@keyframes stretch {
-  from {
-    min-width: 100%;
-  }
-  to {
-    min-width: 90%;
-  }
+.menu_contenu:hover + .check {
+  min-width: 60px;
+}
+.menu_contenu:hover + .check > .fa-check {
+  transform: rotate(360deg);
+  -webkit-animation: 300ms linear forwards normal appear;
+          animation: 300ms linear forwards normal appear;
 }
 .menu_principal {
   width: 94%;
@@ -443,8 +438,12 @@ footer a {
   margin-bottom: 5px;
 }
 .menu_accompagnement {
-  min-width: 88%;
+  min-width: 215px;
   font-weight: 100;
+  direction: ltr;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .menu_prix {
   font-weight: 500;
@@ -480,32 +479,34 @@ ul {
   border-bottom-right-radius: 15px;
   border-top-right-radius: 15px;
   background-color: #99e2d0;
-  min-width: 60px;
-  min-height: 100%;
+  min-width: 0px;
+  transition: min-width 500ms ease-in;
 }
 
 .fa-check {
+  position: absolute;
   background-color: white;
   color: #99e2d0;
   border-radius: 50%;
   padding: 3px;
   font-weight: 900;
-  -webkit-animation: 1000ms ease-out forwards normal rotate;
-          animation: 1000ms ease-out forwards normal rotate;
+  opacity: 0;
+  transform: rotate(90deg);
+  transition: transform 500ms ease-in;
 }
-@-webkit-keyframes rotate {
+@-webkit-keyframes appear {
   from {
-    rotate: 90deg;
+    opacity: 0;
   }
   to {
-    rotate: 360deg;
+    opacity: 1;
   }
 }
-@keyframes rotate {
+@keyframes appear {
   from {
-    rotate: 90deg;
+    opacity: 0;
   }
   to {
-    rotate: 360deg;
+    opacity: 1;
   }
 }/*# sourceMappingURL=style.css.map */
