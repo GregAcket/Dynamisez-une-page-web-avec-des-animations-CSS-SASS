@@ -57,8 +57,8 @@ main {
   box-shadow: #c4c4c4 0px 4px 10px 2px;
 }
 .btn_commander {
+  margin: auto;
   width: 186px;
-  margin-top: 25px;
 }
 
 .fa-location-dot {
@@ -290,6 +290,18 @@ footer a {
 }
 
 /* scss pages restau */
+.entree {
+  margin-bottom: 30px;
+}
+
+.plats {
+  margin-bottom: 47px;
+}
+
+.dessert {
+  margin-bottom: 47px;
+}
+
 .menu {
   box-shadow: none;
 }
@@ -312,7 +324,7 @@ footer a {
 .menu_restaurant {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 34px;
+  margin-bottom: 35px;
 }
 .menu_restaurant p {
   font-family: "shrikhand";
@@ -364,10 +376,13 @@ footer a {
           animation-delay: 400ms;
 }
 .menu_contenu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   background-color: white;
   width: 100%;
   border-radius: 15px;
-  padding: 10px 24px 10px 11px;
+  padding: 13px 24px 10px 11px;
 }
 .menu_contenu:hover {
   margin-right: 0px;
@@ -391,12 +406,15 @@ footer a {
           animation: 500ms linear forwards normal appear;
 }
 .menu_principal {
+  min-width: 93%;
+  max-width: 94%;
   font-weight: 500;
   font-size: 19px;
   margin-bottom: 5px;
 }
 .menu_accompagnement {
   font-weight: 100;
+  font-size: 15px;
   direction: ltr;
   white-space: nowrap;
   overflow: hidden;

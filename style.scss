@@ -66,8 +66,9 @@ main{
         }
     }
     &_commander{
+        margin: auto;
         width: 186px;
-        margin-top: 25px;
+
     }
 }
 
@@ -320,6 +321,18 @@ footer{
 
 /* scss pages restau */
 
+.entree{
+    margin-bottom: 30px;
+}
+
+.plats{
+    margin-bottom: 47px;
+}
+
+.dessert{
+    margin-bottom: 47px;
+}
+
 
 .menu{
     box-shadow: none;
@@ -346,7 +359,7 @@ footer{
     &_restaurant{
         display: flex;
         justify-content: space-between;
-        margin-bottom: 34px;
+        margin-bottom: 35px;
 
         p{
             font-family: 'shrikhand';
@@ -405,10 +418,13 @@ footer{
     }
 
     &_contenu{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
         background-color: white;
         width: 100%;
         border-radius: 15px;
-        padding: 10px 24px 10px 11px;
+        padding: 13px 24px 10px 11px;
 
 
         &:hover{
@@ -437,6 +453,8 @@ footer{
     }
 
     &_principal{
+        min-width: 93%;
+        max-width: 94%;
         font-weight: 500;
         font-size: 19px;
         margin-bottom: 5px;
@@ -444,6 +462,7 @@ footer{
 
     &_accompagnement{
         font-weight: 100;
+        font-size: 15px;
         direction: ltr;     
         white-space: nowrap;
         overflow: hidden;
