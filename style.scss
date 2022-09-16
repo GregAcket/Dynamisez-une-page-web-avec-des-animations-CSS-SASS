@@ -27,7 +27,7 @@ $color-box-shadow: darken($color-fourth, $amount: 10);
     top: 250px;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-    background-color: blue;
+    background-color: white;
     color: black;
     max-width: 355px;
     border-radius: 35px;
@@ -82,7 +82,6 @@ $color-box-shadow: darken($color-fourth, $amount: 10);
 body{
     display: flex;
     flex-direction: column;
-    max-width: 768px;
     margin: auto;
 }
 
