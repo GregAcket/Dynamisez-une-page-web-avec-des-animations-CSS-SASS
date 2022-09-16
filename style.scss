@@ -11,6 +11,74 @@ $color-box-shadow: darken($color-fourth, $amount: 10);
     font-family: 'Roboto', 'shrikhand', sans-serif;
 }
 
+
+.container_spinner{
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    background-color: black;
+    opacity: 1;
+    animation: 500ms linear forwards normal 2300ms unreveal;
+    z-index: 2;
+}
+
+.spinner{
+    position: relative;
+    top: 250px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: white;
+    color: black;
+    max-width: 355px;
+    border-radius: 35px;
+
+    &_ohmyfood{
+    padding: 5px 15px 0 55px ;
+    font-family: 'shrikhand';
+    font-size: 60px;
+    min-width: 100%;
+    }
+}
+
+.o{
+    background-image: black;
+    font-family: 'shrikhand';
+    position: absolute;
+    left: 15px;
+    animation: 500ms linear forwards normal 300ms gradient, 1000ms linear infinite normal 800ms spinner;
+}
+
+@keyframes unreveal {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+@keyframes gradient {
+    0%{
+        background-image: black;
+    }
+    100%{
+        background-image: linear-gradient(to top right, $color-second, $color-first);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+}
+
+@keyframes spinner {
+    0%{
+      transform: rotate(0deg);
+    }
+    100%{
+      transform: rotate(360deg);
+    }
+}
+
 body{
     display: flex;
     flex-direction: column;
