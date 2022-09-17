@@ -464,7 +464,7 @@ footer{
     }
 
     &_card{
-        display: flex;
+        display: grid;
         background-color: white;
         margin-bottom: 15px;
         border-radius: 15px;
@@ -486,13 +486,12 @@ footer{
     }
 
     &_contenu{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+        grid-row: 1;
+        grid-column: 1;
         background-color: white;
         width: 100%;
         border-radius: 15px;
-        padding: 13px 24px 10px 11px;
+        padding: 13px 0px 10px 11px;
 
 
         &:hover{
@@ -538,7 +537,11 @@ footer{
     }
 
     &_prix{
+        grid-row: 1;
+        grid-column: 2;
         font-weight: 500;
+        align-self: end;
+        padding: 0px 24px 10px 10px;
     }
 }
 
@@ -549,6 +552,8 @@ ul{
 }
 
 .check{
+    grid-row: 1;
+    grid-column: 3;
     position: relative;
     border-bottom-right-radius: 13px;
     border-top-right-radius: 13px;
