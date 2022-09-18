@@ -1,0 +1,9 @@
+/* variables couleurs */
+
+$color-first: #9356dc;
+$color-second: #ff79da;
+$color-third: #99e2d0;
+$color-fourth:#f7f7f7;
+$color-fifth: darken($color-fourth, $amount: 40);
+$color-border-box-shadow: darken($color-fourth, $amount: 20);
+$color-box-shadow: darken($color-fourth, $amount: 10);

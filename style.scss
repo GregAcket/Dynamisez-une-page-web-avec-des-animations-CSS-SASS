@@ -1,24 +1,19 @@
- $color-first: #9356dc;
-$color-second: #ff79da;
-$color-third: #99e2d0;
-$color-fourth:#f7f7f7;
-$color-fifth: darken($color-fourth, $amount: 40);
-$color-border-box-shadow: darken($color-fourth, $amount: 20);
-$color-box-shadow: darken($color-fourth, $amount: 10);
+@import "/assets/scss/utils/_variables.scss";
+@import "/assets/scss/utils/_mixins.scss";
+
 
 *{
     box-sizing: border-box;
     font-family: 'Roboto', 'shrikhand', sans-serif;
 }
 
-
 .container_spinner{
     position: absolute;
     min-width: 100%;
     min-height: 100%;
-    background-color: black;
+    @include pouet;
     opacity: 1;
-    animation: 500ms linear forwards normal 2300ms unreveal;
+    animation: 500ms linear forwards normal 2300ms disappear;
     z-index: 2;
 }
 
@@ -46,37 +41,6 @@ $color-box-shadow: darken($color-fourth, $amount: 10);
     position: absolute;
     left: 15px;
     animation: 500ms linear forwards normal 300ms gradient, 1000ms linear infinite normal 800ms spinner;
-}
-
-@keyframes unreveal {
-    0%{
-        opacity: 1;
-    }
-    100%{
-        opacity: 0;
-        z-index: -1;
-    }
-}
-
-@keyframes gradient {
-    0%{
-        background-image: black;
-    }
-    100%{
-        background-image: linear-gradient(to top right, $color-second, $color-first);
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-    }
-}
-
-@keyframes spinner {
-    0%{
-      transform: rotate(0deg);
-    }
-    100%{
-      transform: rotate(360deg);
-    }
 }
 
 body{
@@ -569,6 +533,46 @@ ul{
     transition: transform 500ms ease-in;
     top: 33%;
     left: 15px;
+}
+
+
+/* animation disparition loading screen spinner */
+
+@keyframes disappear {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+
+/* animation changement couleur spinner */
+
+@keyframes gradient {
+    0%{
+        background-image: black;
+    }
+    100%{
+        background-image: linear-gradient(to top right, $color-second, $color-first);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+}
+
+
+/* animation rotation spinner */
+
+@keyframes spinner {
+    0%{
+      transform: rotate(0deg);
+    }
+    100%{
+      transform: rotate(360deg);
+    }
 }
 
 

@@ -10,8 +10,8 @@
   min-height: 100%;
   background-color: black;
   opacity: 1;
-  -webkit-animation: 500ms linear forwards normal 2300ms unreveal;
-          animation: 500ms linear forwards normal 2300ms unreveal;
+  -webkit-animation: 500ms linear forwards normal 2300ms disappear;
+          animation: 500ms linear forwards normal 2300ms disappear;
   z-index: 2;
 }
 
@@ -41,63 +41,6 @@
           animation: 500ms linear forwards normal 300ms gradient, 1000ms linear infinite normal 800ms spinner;
 }
 
-@-webkit-keyframes unreveal {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    z-index: -1;
-  }
-}
-
-@keyframes unreveal {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    z-index: -1;
-  }
-}
-@-webkit-keyframes gradient {
-  0% {
-    background-image: black;
-  }
-  100% {
-    background-image: linear-gradient(to top right, #ff79da, #9356dc);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-  }
-}
-@keyframes gradient {
-  0% {
-    background-image: black;
-  }
-  100% {
-    background-image: linear-gradient(to top right, #ff79da, #9356dc);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-  }
-}
-@-webkit-keyframes spinner {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes spinner {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 body {
   display: flex;
   flex-direction: column;
@@ -549,6 +492,65 @@ ul {
   left: 15px;
 }
 
+/* animation disparition loading screen spinner */
+@-webkit-keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+/* animation changement couleur spinner */
+@-webkit-keyframes gradient {
+  0% {
+    background-image: black;
+  }
+  100% {
+    background-image: linear-gradient(to top right, #ff79da, #9356dc);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-image: black;
+  }
+  100% {
+    background-image: linear-gradient(to top right, #ff79da, #9356dc);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+}
+/* animation rotation spinner */
+@-webkit-keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 /* animation remplissage coeur*/
 @keyframes fill {
   from {
