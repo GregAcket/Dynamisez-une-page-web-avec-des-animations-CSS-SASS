@@ -1,5 +1,5 @@
-@import "/assets/scss/utils/_variables.scss";
-@import "/assets/scss/utils/_mixins.scss";
+@import "./assets/scss/utils/variables.scss";
+@import "./assets/scss/utils/_mixins.scss";
 
 
 *{
@@ -11,9 +11,9 @@
     position: absolute;
     min-width: 100%;
     min-height: 100%;
-    @include pouet;
+    @include background_color(black);
     opacity: 1;
-    animation: 500ms linear forwards normal 2300ms disappear;
+    animation: $animation_time linear forwards normal 2300ms disappear;
     z-index: 2;
 }
 
@@ -22,7 +22,7 @@
     top: 250px;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-    background-color: white;
+    @include background_color;
     color: black;
     max-width: 355px;
     border-radius: 35px;
@@ -40,7 +40,7 @@
     font-family: 'shrikhand';
     position: absolute;
     left: 15px;
-    animation: 500ms linear forwards normal 300ms gradient, 1000ms linear infinite normal 800ms spinner;
+    animation: $animation_time linear forwards normal 300ms gradient, 1000ms linear infinite normal 800ms spinner;
 }
 
 body{
@@ -72,9 +72,7 @@ main{
 }
 
 .btn{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex_justify_align_center;
     border: none;
     &__location{
         width: 100%;
@@ -119,7 +117,7 @@ p{
     align-items: center;
     height: 290px;
     padding: 0px 50px 0px 40px;
-    background-color: $color-fourth;
+    @include background_color($color-fourth);
     text-align: center;
 
     h1{
@@ -156,7 +154,7 @@ aside{
     li{
         display: flex;
         align-items: center; 
-        background-color: $color-fourth;
+        @include background_color($color-fourth);
         height: 75px;
         width: 100%;
         border-radius: 25px;
@@ -174,10 +172,8 @@ aside{
     }
         
     .list_numbers{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: $color-first;
+        @include flex_justify_align_center;
+        @include background_color($color-first);
         color: white;
         border-radius: 25px;
         width: 24px;
@@ -204,13 +200,14 @@ h2{
 
 #restaurant{
 
-    background-color: $color-fourth;
+
+    @include background_color($color-fourth);
     margin-top: 50px;
     padding-bottom: 44px;
 
     a{
         display: flex;
-        background-color: white;
+        @include background_color;
         height: 250px;
         margin: 0px 20px 18px 20px;
         text-decoration: none;
@@ -231,9 +228,7 @@ h2{
     }
 
     &_new{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex_justify_align_center;
         position: relative;
         right: 11px;
         bottom: 202px;
@@ -242,7 +237,7 @@ h2{
         border-radius: 2px;
         width: 80px;
         height: 30px;
-        background-color: $color-third;
+        @include background_color($color-third);
         color: darken($color-third, $amount: 40);
     }
 
@@ -289,29 +284,15 @@ h2{
         height: 25px;
 
         &:hover{
-            background-image: linear-gradient(to top right, $color-second, $color-first);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
+            @include background_clip;
             font-weight: 700;
             animation: 300ms ease-out forwards normal fill;            
-        }
-
-        @keyframes fill {
-            from{
-                height: 0px;
-                opacity: 0;
-            }
-            to{
-                height: 25px;
-                opacity: 1;
-            }
         }
     }
 }
 
 footer{
-    background-color: #353535;
+    @include background_color(#353535);
 
     ul{
         list-style-type: none;
@@ -382,7 +363,7 @@ footer{
     }
 
     &_complet{
-        background-color: $color-fourth;
+        @include background_color($color-fourth);
         border-top-left-radius: 40px;
         border-top-right-radius: 40px;
         padding: 35px 12px 65px 14px;
@@ -408,10 +389,7 @@ footer{
 
     
             &:hover{
-                background-image: linear-gradient(to top right, $color-second, $color-first);
-                background-clip: text;
-                -webkit-background-clip: text;
-                color: transparent;
+                @include background_clip;
                 font-weight: 700;
                 animation: 300ms ease-out forwards normal fill;            
             }
@@ -429,7 +407,7 @@ footer{
 
     &_card{
         display: flex;
-        background-color: white;
+        @include background_color;
         margin-bottom: 15px;
         border-radius: 15px;
         box-shadow: $color-box-shadow 0px 4px 10px 2px;
@@ -453,7 +431,7 @@ footer{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        background-color: white;
+        @include background_color;
         width: 100%;
         border-radius: 15px;
         padding: 13px 24px 10px 11px;
@@ -478,7 +456,7 @@ footer{
 
                 & > .fa-check{
                     transform: rotate(360deg);
-                    animation: 500ms linear forwards normal appear;
+                    animation: $animation_time linear forwards normal appear;
                 }
             }
         }
@@ -516,21 +494,21 @@ ul{
     position: relative;
     border-bottom-right-radius: 13px;
     border-top-right-radius: 13px;
-    background-color: $color-third;
+    @include background_color($color-third);
     width: 0px;
-    transition: width 500ms;
+    transition: width $animation_time;
 }
 
 .fa-check{
     position: relative;
-    background-color: white;
+    @include background_color;
     color: $color-third;
     border-radius: 50%;
     padding: 3px;
     font-weight: 900;
     opacity: 0;
     transform: rotate(90deg);
-    transition: transform 500ms ease-in;
+    transition: transform $animation_time ease-in;
     top: 33%;
     left: 15px;
 }
@@ -556,10 +534,7 @@ ul{
         background-image: black;
     }
     100%{
-        background-image: linear-gradient(to top right, $color-second, $color-first);
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
+        @include background_clip;
     }
 }
 

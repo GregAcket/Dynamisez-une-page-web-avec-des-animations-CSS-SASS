@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/* variables couleurs */ /* mixins */
 * {
   box-sizing: border-box;
   font-family: "Roboto", "shrikhand", sans-serif;
@@ -271,26 +272,6 @@ h2 {
   -webkit-animation: 300ms ease-out forwards normal fill;
           animation: 300ms ease-out forwards normal fill;
 }
-@-webkit-keyframes fill {
-  from {
-    height: 0px;
-    opacity: 0;
-  }
-  to {
-    height: 25px;
-    opacity: 1;
-  }
-}
-@keyframes fill {
-  from {
-    height: 0px;
-    opacity: 0;
-  }
-  to {
-    height: 25px;
-    opacity: 1;
-  }
-}
 
 footer {
   background-color: #353535;
@@ -552,6 +533,16 @@ ul {
   }
 }
 /* animation remplissage coeur*/
+@-webkit-keyframes fill {
+  from {
+    height: 0px;
+    opacity: 0;
+  }
+  to {
+    height: 25px;
+    opacity: 1;
+  }
+}
 @keyframes fill {
   from {
     height: 0px;

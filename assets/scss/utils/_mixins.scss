@@ -1,5 +1,18 @@
 /* mixins */
 
-@mixin pouet ( $color: $color-fourth) {
+@mixin background_color ( $color: white) {
     background-color: $color;
+}
+
+@mixin flex_justify_align_center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin background_clip {
+    background-image: linear-gradient(to top right, $color-second, $color-first);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
 }
