@@ -362,7 +362,7 @@ footer{
         max-height: 250px;
     }
 
-    &_complet{
+    &_full{
         @include background_color($color-fourth);
         border-top-left-radius: 40px;
         border-top-right-radius: 40px;
@@ -375,11 +375,12 @@ footer{
         justify-content: space-between;
         margin-bottom: 35px;
 
-        p{
+        h1{
             font-family: 'shrikhand';
             font-weight: 500;
             font-size: 28px;
             padding-left: 6px;
+            margin: 0;
         }
 
         .fa-heart{
@@ -407,6 +408,7 @@ footer{
 
     &_card{
         display: flex;
+        justify-content: space-between;
         @include background_color;
         margin-bottom: 15px;
         border-radius: 15px;
@@ -416,6 +418,29 @@ footer{
 
         &:hover{
             box-shadow: darken($color: $color-box-shadow, $amount: 10) 0px 4px 10px 2px;
+
+            .menu_content{
+                direction: ltr;     
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .menu_principal{
+                direction: ltr;     
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .check{
+                width: 60px;
+
+                & > .fa-check{
+                    transform: rotate(360deg);
+                    animation: $animation_time linear forwards normal appear;
+                }
+            }
         }
 
         &:nth-child(3){
@@ -427,44 +452,13 @@ footer{
         }
     }
 
-    &_contenu{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+    &_content{
         @include background_color;
-        width: 100%;
         border-radius: 15px;
-        padding: 13px 24px 10px 11px;
-
-
-        &:hover{
-            margin-right: 0px;
-            direction: ltr;     
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-
-            > .menu_principal{
-                direction: ltr;     
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-
-            & + .check{
-                width: 60px;
-
-                & > .fa-check{
-                    transform: rotate(360deg);
-                    animation: $animation_time linear forwards normal appear;
-                }
-            }
-        }
+        padding: 13px 0px 10px 11px;
     }
 
     &_principal{
-        min-width: 93%;
-        max-width: 94%;
         font-weight: 500;
         font-size: 19px;
         margin-bottom: 5px;
@@ -473,14 +467,12 @@ footer{
     &_accompagnement{
         font-weight: 100;
         font-size: 15px;
-        direction: ltr;     
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
     }
 
     &_prix{
+        align-self: flex-end;
         font-weight: 500;
+        padding: 0px 24px 10px 0px;
     }
 }
 
@@ -490,12 +482,16 @@ ul{
     margin: 0px;
 }
 
+.test{
+    display: flex;
+    min-height: 100%;
+}
+
 .check{
-    position: relative;
     border-bottom-right-radius: 13px;
     border-top-right-radius: 13px;
-    @include background_color($color-third);
     width: 0px;
+    @include background_color($color-third);
     transition: width $animation_time;
 }
 
