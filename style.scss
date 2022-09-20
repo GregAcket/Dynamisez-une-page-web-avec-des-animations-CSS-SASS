@@ -1,24 +1,19 @@
- $color-first: #9356dc;
-$color-second: #ff79da;
-$color-third: #99e2d0;
-$color-fourth:#f7f7f7;
-$color-fifth: darken($color-fourth, $amount: 40);
-$color-border-box-shadow: darken($color-fourth, $amount: 20);
-$color-box-shadow: darken($color-fourth, $amount: 10);
+@import "./assets/scss/utils/variables.scss";
+@import "./assets/scss/utils/_mixins.scss";
+
 
 *{
     box-sizing: border-box;
     font-family: 'Roboto', 'shrikhand', sans-serif;
 }
 
-
 .container_spinner{
     position: absolute;
     min-width: 100%;
     min-height: 100%;
-    background-color: black;
+    @include background_color(black);
     opacity: 1;
-    animation: 500ms linear forwards normal 2300ms unreveal;
+    animation: $animation_time linear forwards normal 2300ms disappear;
     z-index: 2;
 }
 
@@ -27,7 +22,7 @@ $color-box-shadow: darken($color-fourth, $amount: 10);
     top: 250px;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-    background-color: white;
+    @include background_color;
     color: black;
     max-width: 355px;
     border-radius: 35px;
@@ -45,38 +40,7 @@ $color-box-shadow: darken($color-fourth, $amount: 10);
     font-family: 'shrikhand';
     position: absolute;
     left: 15px;
-    animation: 500ms linear forwards normal 300ms gradient, 1000ms linear infinite normal 800ms spinner;
-}
-
-@keyframes unreveal {
-    0%{
-        opacity: 1;
-    }
-    100%{
-        opacity: 0;
-        z-index: -1;
-    }
-}
-
-@keyframes gradient {
-    0%{
-        background-image: black;
-    }
-    100%{
-        background-image: linear-gradient(to top right, $color-second, $color-first);
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-    }
-}
-
-@keyframes spinner {
-    0%{
-      transform: rotate(0deg);
-    }
-    100%{
-      transform: rotate(360deg);
-    }
+    animation: $animation_time linear forwards normal 300ms gradient, 1000ms linear infinite normal 800ms spinner;
 }
 
 body{
@@ -108,9 +72,7 @@ main{
 }
 
 .btn{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex_justify_align_center;
     border: none;
     &__location{
         width: 100%;
@@ -155,7 +117,7 @@ p{
     align-items: center;
     height: 290px;
     padding: 0px 50px 0px 40px;
-    background-color: $color-fourth;
+    @include background_color($color-fourth);
     text-align: center;
 
     h1{
@@ -192,7 +154,7 @@ aside{
     li{
         display: flex;
         align-items: center; 
-        background-color: $color-fourth;
+        @include background_color($color-fourth);
         height: 75px;
         width: 100%;
         border-radius: 25px;
@@ -210,10 +172,8 @@ aside{
     }
         
     .list_numbers{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: $color-first;
+        @include flex_justify_align_center;
+        @include background_color($color-first);
         color: white;
         border-radius: 25px;
         width: 24px;
@@ -240,13 +200,14 @@ h2{
 
 #restaurant{
 
-    background-color: $color-fourth;
+
+    @include background_color($color-fourth);
     margin-top: 50px;
     padding-bottom: 44px;
 
     a{
         display: flex;
-        background-color: white;
+        @include background_color;
         height: 250px;
         margin: 0px 20px 18px 20px;
         text-decoration: none;
@@ -267,9 +228,7 @@ h2{
     }
 
     &_new{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex_justify_align_center;
         position: relative;
         right: 11px;
         bottom: 202px;
@@ -278,7 +237,7 @@ h2{
         border-radius: 2px;
         width: 80px;
         height: 30px;
-        background-color: $color-third;
+        @include background_color($color-third);
         color: darken($color-third, $amount: 40);
     }
 
@@ -325,29 +284,15 @@ h2{
         height: 25px;
 
         &:hover{
-            background-image: linear-gradient(to top right, $color-second, $color-first);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
+            @include background_clip;
             font-weight: 700;
             animation: 300ms ease-out forwards normal fill;            
-        }
-
-        @keyframes fill {
-            from{
-                height: 0px;
-                opacity: 0;
-            }
-            to{
-                height: 25px;
-                opacity: 1;
-            }
         }
     }
 }
 
 footer{
-    background-color: #353535;
+    @include background_color(#353535);
 
     ul{
         list-style-type: none;
@@ -417,8 +362,8 @@ footer{
         max-height: 250px;
     }
 
-    &_complet{
-        background-color: $color-fourth;
+    &_full{
+        @include background_color($color-fourth);
         border-top-left-radius: 40px;
         border-top-right-radius: 40px;
         padding: 35px 12px 65px 14px;
@@ -430,11 +375,12 @@ footer{
         justify-content: space-between;
         margin-bottom: 35px;
 
-        p{
+        h1{
             font-family: 'shrikhand';
             font-weight: 500;
             font-size: 28px;
             padding-left: 6px;
+            margin: 0;
         }
 
         .fa-heart{
@@ -444,10 +390,7 @@ footer{
 
     
             &:hover{
-                background-image: linear-gradient(to top right, $color-second, $color-first);
-                background-clip: text;
-                -webkit-background-clip: text;
-                color: transparent;
+                @include background_clip;
                 font-weight: 700;
                 animation: 300ms ease-out forwards normal fill;            
             }
@@ -464,8 +407,9 @@ footer{
     }
 
     &_card{
-        display: grid;
-        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        @include background_color;
         margin-bottom: 15px;
         border-radius: 15px;
         box-shadow: $color-box-shadow 0px 4px 10px 2px;
@@ -474,6 +418,29 @@ footer{
 
         &:hover{
             box-shadow: darken($color: $color-box-shadow, $amount: 10) 0px 4px 10px 2px;
+
+            .menu_content{
+                direction: ltr;     
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .menu_principal{
+                direction: ltr;     
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .check{
+                width: 60px;
+
+                & > .fa-check{
+                    transform: rotate(360deg);
+                    animation: $animation_time linear forwards normal appear;
+                }
+            }
         }
 
         &:nth-child(3){
@@ -485,43 +452,13 @@ footer{
         }
     }
 
-    &_contenu{
-        grid-row: 1;
-        grid-column: 1;
-        background-color: white;
-        width: 100%;
+    &_content{
+        @include background_color;
         border-radius: 15px;
         padding: 13px 0px 10px 11px;
-
-
-        &:hover{
-            margin-right: 0px;
-            direction: ltr;     
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-
-            > .menu_principal{
-                direction: ltr;     
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-
-            & + .check{
-                width: 60px;
-
-                & > .fa-check{
-                    transform: rotate(360deg);
-                    animation: 500ms linear forwards normal appear;
-                }
-            }
-        }
     }
 
     &_principal{
-        min-width: 93%;
-        max-width: 94%;
         font-weight: 500;
         font-size: 19px;
         margin-bottom: 5px;
@@ -530,18 +467,12 @@ footer{
     &_accompagnement{
         font-weight: 100;
         font-size: 15px;
-        direction: ltr;     
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
     }
 
     &_prix{
-        grid-row: 1;
-        grid-column: 2;
+        align-self: flex-end;
         font-weight: 500;
-        align-self: end;
-        padding: 0px 24px 10px 10px;
+        padding: 0px 24px 10px 0px;
     }
 }
 
@@ -551,29 +482,68 @@ ul{
     margin: 0px;
 }
 
+.test{
+    display: flex;
+    min-height: 100%;
+}
+
 .check{
-    grid-row: 1;
-    grid-column: 3;
-    position: relative;
     border-bottom-right-radius: 13px;
     border-top-right-radius: 13px;
-    background-color: $color-third;
     width: 0px;
-    transition: width 500ms;
+    @include background_color($color-third);
+    transition: width $animation_time;
 }
 
 .fa-check{
     position: relative;
-    background-color: white;
+    @include background_color;
     color: $color-third;
     border-radius: 50%;
     padding: 3px;
     font-weight: 900;
     opacity: 0;
     transform: rotate(90deg);
-    transition: transform 500ms ease-in;
+    transition: transform $animation_time ease-in;
     top: 33%;
     left: 15px;
+}
+
+
+/* animation disparition loading screen spinner */
+
+@keyframes disappear {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+
+/* animation changement couleur spinner */
+
+@keyframes gradient {
+    0%{
+        background-image: black;
+    }
+    100%{
+        @include background_clip;
+    }
+}
+
+
+/* animation rotation spinner */
+
+@keyframes spinner {
+    0%{
+      transform: rotate(0deg);
+    }
+    100%{
+      transform: rotate(360deg);
+    }
 }
 
 

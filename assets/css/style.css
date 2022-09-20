@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/* variables couleurs */ /* mixins */
 * {
   box-sizing: border-box;
   font-family: "Roboto", "shrikhand", sans-serif;
@@ -10,8 +11,8 @@
   min-height: 100%;
   background-color: black;
   opacity: 1;
-  -webkit-animation: 500ms linear forwards normal 2300ms unreveal;
-          animation: 500ms linear forwards normal 2300ms unreveal;
+  -webkit-animation: 500ms linear forwards normal 2300ms disappear;
+          animation: 500ms linear forwards normal 2300ms disappear;
   z-index: 2;
 }
 
@@ -41,63 +42,6 @@
           animation: 500ms linear forwards normal 300ms gradient, 1000ms linear infinite normal 800ms spinner;
 }
 
-@-webkit-keyframes unreveal {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    z-index: -1;
-  }
-}
-
-@keyframes unreveal {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    z-index: -1;
-  }
-}
-@-webkit-keyframes gradient {
-  0% {
-    background-image: black;
-  }
-  100% {
-    background-image: linear-gradient(to top right, #ff79da, #9356dc);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-  }
-}
-@keyframes gradient {
-  0% {
-    background-image: black;
-  }
-  100% {
-    background-image: linear-gradient(to top right, #ff79da, #9356dc);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-  }
-}
-@-webkit-keyframes spinner {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes spinner {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 body {
   display: flex;
   flex-direction: column;
@@ -328,26 +272,6 @@ h2 {
   -webkit-animation: 300ms ease-out forwards normal fill;
           animation: 300ms ease-out forwards normal fill;
 }
-@-webkit-keyframes fill {
-  from {
-    height: 0px;
-    opacity: 0;
-  }
-  to {
-    height: 25px;
-    opacity: 1;
-  }
-}
-@keyframes fill {
-  from {
-    height: 0px;
-    opacity: 0;
-  }
-  to {
-    height: 25px;
-    opacity: 1;
-  }
-}
 
 footer {
   background-color: #353535;
@@ -410,7 +334,7 @@ footer a {
   min-width: 100%;
   max-height: 250px;
 }
-.menu_complet {
+.menu_full {
   background-color: #f7f7f7;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
@@ -422,11 +346,12 @@ footer a {
   justify-content: space-between;
   margin-bottom: 35px;
 }
-.menu_restaurant p {
+.menu_restaurant h1 {
   font-family: "shrikhand";
   font-weight: 500;
   font-size: 28px;
   padding-left: 6px;
+  margin: 0;
 }
 .menu_restaurant .fa-heart {
   font-size: 25px;
@@ -451,7 +376,8 @@ footer a {
   width: 40px;
 }
 .menu_card {
-  display: grid;
+  display: flex;
+  justify-content: space-between;
   background-color: white;
   margin-bottom: 15px;
   border-radius: 15px;
@@ -463,6 +389,26 @@ footer a {
 .menu_card:hover {
   box-shadow: #c4c4c4 0px 4px 10px 2px;
 }
+.menu_card:hover .menu_content {
+  direction: ltr;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu_card:hover .menu_principal {
+  direction: ltr;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu_card:hover .check {
+  width: 60px;
+}
+.menu_card:hover .check > .fa-check {
+  transform: rotate(360deg);
+  -webkit-animation: 500ms linear forwards normal appear;
+          animation: 500ms linear forwards normal appear;
+}
 .menu_card:nth-child(3) {
   -webkit-animation-delay: 200ms;
           animation-delay: 200ms;
@@ -471,38 +417,12 @@ footer a {
   -webkit-animation-delay: 400ms;
           animation-delay: 400ms;
 }
-.menu_contenu {
-  grid-row: 1;
-  grid-column: 1;
+.menu_content {
   background-color: white;
-  width: 100%;
   border-radius: 15px;
   padding: 13px 0px 10px 11px;
 }
-.menu_contenu:hover {
-  margin-right: 0px;
-  direction: ltr;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.menu_contenu:hover > .menu_principal {
-  direction: ltr;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.menu_contenu:hover + .check {
-  width: 60px;
-}
-.menu_contenu:hover + .check > .fa-check {
-  transform: rotate(360deg);
-  -webkit-animation: 500ms linear forwards normal appear;
-          animation: 500ms linear forwards normal appear;
-}
 .menu_principal {
-  min-width: 93%;
-  max-width: 94%;
   font-weight: 500;
   font-size: 19px;
   margin-bottom: 5px;
@@ -510,17 +430,11 @@ footer a {
 .menu_accompagnement {
   font-weight: 100;
   font-size: 15px;
-  direction: ltr;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 .menu_prix {
-  grid-row: 1;
-  grid-column: 2;
+  align-self: flex-end;
   font-weight: 500;
-  align-self: end;
-  padding: 0px 24px 10px 10px;
+  padding: 0px 24px 10px 0px;
 }
 
 ul {
@@ -529,14 +443,16 @@ ul {
   margin: 0px;
 }
 
+.test {
+  display: flex;
+  min-height: 100%;
+}
+
 .check {
-  grid-row: 1;
-  grid-column: 3;
-  position: relative;
   border-bottom-right-radius: 13px;
   border-top-right-radius: 13px;
-  background-color: #99e2d0;
   width: 0px;
+  background-color: #99e2d0;
   transition: width 500ms;
 }
 
@@ -554,7 +470,76 @@ ul {
   left: 15px;
 }
 
+/* animation disparition loading screen spinner */
+@-webkit-keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+/* animation changement couleur spinner */
+@-webkit-keyframes gradient {
+  0% {
+    background-image: black;
+  }
+  100% {
+    background-image: linear-gradient(to top right, #ff79da, #9356dc);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-image: black;
+  }
+  100% {
+    background-image: linear-gradient(to top right, #ff79da, #9356dc);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+}
+/* animation rotation spinner */
+@-webkit-keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 /* animation remplissage coeur*/
+@-webkit-keyframes fill {
+  from {
+    height: 0px;
+    opacity: 0;
+  }
+  to {
+    height: 25px;
+    opacity: 1;
+  }
+}
 @keyframes fill {
   from {
     height: 0px;
