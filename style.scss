@@ -136,7 +136,6 @@ p{
     text-align: center;
 
     @include tablette{
-        min-height: none;
         justify-content: center;
         border-radius: 25px;
         margin: 0px 10px 0px 10px;
@@ -470,16 +469,36 @@ footer{
 
 .entree{
     margin-bottom: 30px;
+
+    @include tablette{
+        max-width: 30%;
+    }
 }
 
 .plats{
     margin-bottom: 47px;
+
+    @include tablette{
+        max-width: 30%;
+    }
 }
 
 .dessert{
     margin-bottom: 47px;
+
+    @include tablette{
+        max-width: 30%;
+    }
 }
 
+.page_restaurant{
+    display: flex;
+    flex-direction: column;
+
+    @include tablette{
+        gap: 0px;
+    }    
+}
 
 .menu{
     box-shadow: none;
@@ -503,12 +522,22 @@ footer{
         border-top-right-radius: 40px;
         padding: 35px 12px 65px 14px;
         margin-top: -36px;
+
+        @include tablette{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
     }
 
     &_restaurant{
         display: flex;
         justify-content: space-between;
         margin-bottom: 35px;
+
+        @include tablette{
+            min-width: 100%;
+        }
 
         h1{
             font-family: 'shrikhand';
@@ -551,9 +580,14 @@ footer{
         animation: 1000ms ease-out forwards normal move;
         opacity: 0;
 
+        @include desktop{
+            min-width: 32%;
+            max-width: 32%;
+            margin-right: 10px;
+        }
+
         &:hover{
             box-shadow: darken($color: $color-box-shadow, $amount: 10) 0px 4px 10px 2px;
-
 
             .check{
                 width: 60px;
@@ -586,14 +620,12 @@ footer{
         font-size: 19px;
         margin-bottom: 5px;
         @include overflow;
-
     }
 
     &_accompagnement{
         font-weight: 100;
         font-size: 15px;
         @include overflow;
-
     }
 
     &_prix{
@@ -607,6 +639,16 @@ ul{
     list-style: none;
     padding: 0px;
     margin: 0px;
+
+    @include desktop{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    li:nth-child(1){
+        min-width: 100%;
+    }
 }
 
 .test{

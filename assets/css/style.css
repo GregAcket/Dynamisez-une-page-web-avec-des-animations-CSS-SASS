@@ -137,7 +137,6 @@ p {
 }
 @media (min-width: 768px) and (max-width: 992px) {
   .top {
-    min-height: none;
     justify-content: center;
     border-radius: 25px;
     margin: 0px 10px 0px 10px;
@@ -464,13 +463,38 @@ footer a {
 .entree {
   margin-bottom: 30px;
 }
+@media (min-width: 768px) and (max-width: 992px) {
+  .entree {
+    max-width: 30%;
+  }
+}
 
 .plats {
   margin-bottom: 47px;
 }
+@media (min-width: 768px) and (max-width: 992px) {
+  .plats {
+    max-width: 30%;
+  }
+}
 
 .dessert {
   margin-bottom: 47px;
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .dessert {
+    max-width: 30%;
+  }
+}
+
+.page_restaurant {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .page_restaurant {
+    gap: 0px;
+  }
 }
 
 .menu {
@@ -495,10 +519,22 @@ footer a {
   padding: 35px 12px 65px 14px;
   margin-top: -36px;
 }
+@media (min-width: 768px) and (max-width: 992px) {
+  .menu_full {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
 .menu_restaurant {
   display: flex;
   justify-content: space-between;
   margin-bottom: 35px;
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .menu_restaurant {
+    min-width: 100%;
+  }
 }
 .menu_restaurant h1 {
   font-family: "shrikhand";
@@ -539,6 +575,13 @@ footer a {
   -webkit-animation: 1000ms ease-out forwards normal move;
           animation: 1000ms ease-out forwards normal move;
   opacity: 0;
+}
+@media all and (min-width: 992px) {
+  .menu_card {
+    min-width: 32%;
+    max-width: 32%;
+    margin-right: 10px;
+  }
 }
 .menu_card:hover {
   box-shadow: #c4c4c4 0px 4px 10px 2px;
@@ -595,6 +638,16 @@ ul {
   list-style: none;
   padding: 0px;
   margin: 0px;
+}
+@media all and (min-width: 992px) {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+ul li:nth-child(1) {
+  min-width: 100%;
 }
 
 .test {
