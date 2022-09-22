@@ -1,0 +1,10 @@
+main{
+    display: flex;
+    flex-direction: column;
+
+    @include tablette{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px
+    }
+}

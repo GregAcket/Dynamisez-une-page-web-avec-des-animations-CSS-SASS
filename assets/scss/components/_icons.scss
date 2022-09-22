@@ -1,0 +1,27 @@
+.fa-location-dot{
+    margin-right: 18px;
+}
+
+.fa-utensils{
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.fa-handshake-angle{
+    font-size: 12px;
+    margin-right: 13px;
+}
+
+.fa-check{
+    position: relative;
+    background-color: white;
+    color: $color-third;
+    border-radius: 50%;
+    padding: 3px;
+    font-weight: 900;
+    opacity: 0;
+    transform: rotate(90deg);
+    transition: transform $animation_time ease-in;
+    top: 33%;
+    left: 15px;
+}

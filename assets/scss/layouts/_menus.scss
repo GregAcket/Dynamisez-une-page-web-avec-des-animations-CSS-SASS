@@ -1,0 +1,138 @@
+.menu{
+    box-shadow: none;
+
+    .fa-arrow-left{
+        position: absolute;
+        left: 23px;
+        color: black;
+        font-size: 20px;
+    }
+
+    &_img{
+        object-fit: cover;
+        min-width: 100%;
+        max-height: 250px;
+    }
+
+    &_full{
+        background-color: $color-fourth;
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
+        padding: 35px 12px 65px 14px;
+        margin-top: -36px;
+
+        @include tablette{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    }
+
+    &_restaurant{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 35px;
+
+        @include tablette{
+            min-width: 100%;
+        }
+
+        h1{
+            font-family: 'shrikhand';
+            font-weight: 500;
+            font-size: 28px;
+            padding-left: 6px;
+            margin: 0;
+        }
+
+        .fa-heart{
+            font-size: 25px;
+            height: 25px;
+            margin-right: 20px;
+
+    
+            &:hover{
+                @include background_clip;
+                font-weight: 700;
+                animation: 300ms ease-out forwards normal fill;            
+            }
+        }        
+    }
+
+    &_title{
+        text-transform: uppercase;
+        border-bottom: 3px solid $color-third;
+        margin-left: 6px;
+        margin-bottom: 14px;
+        padding-bottom: 5px;
+        width: 40px;
+    }
+
+    &_card{
+        display: flex;
+        justify-content: space-between;
+        background-color:white;
+        margin-bottom: 15px;
+        border-radius: 15px;
+        box-shadow: $color-box-shadow 0px 4px 10px 2px;
+        animation: 1000ms ease-out forwards normal move;
+        opacity: 0;
+
+        @include desktop{
+            min-width: 32%;
+            max-width: 32%;
+            margin-right: 10px;
+        }
+
+        &:hover{
+            box-shadow: darken($color: $color-box-shadow, $amount: 10) 0px 4px 10px 2px;
+
+            .check{
+                width: 60px;
+
+                & > .fa-check{
+                    transform: rotate(360deg);
+                    animation: $animation_time linear forwards normal appear;
+                }
+            }
+        }
+
+        &:nth-child(3){
+            animation-delay: 200ms;
+        }
+
+        &:nth-child(4){
+            animation-delay: 400ms;
+        }
+
+        &:nth-child(5){
+            animation-delay: 600ms;
+        }
+    }
+
+    &_content{
+        background-color:white;
+        border-radius: 15px;
+        padding: 13px 0px 10px 11px;
+        @include overflow;
+    }
+
+    &_principal{
+        font-weight: 500;;
+        font-size: 19px;
+        margin-bottom: 5px;
+        @include overflow;
+    }
+
+    &_accompagnement{
+        font-weight: 100;
+        font-size: 15px;
+        @include overflow;
+    }
+
+    &_prix{
+        align-self: flex-end;
+        font-weight: 500;
+        padding: 0px 0px 10px 0px;
+    }
+}

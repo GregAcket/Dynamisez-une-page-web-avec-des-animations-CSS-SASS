@@ -10,6 +10,7 @@ $color-box-shadow: darken($color-fourth, $amount: 10);
 $animation_time: 500ms;
 
 $breakpoint: (
-    tablette: 768px,
+    min_tablette: 768px,
+    max_tablette: 991px,
     desktop: 992px
 );

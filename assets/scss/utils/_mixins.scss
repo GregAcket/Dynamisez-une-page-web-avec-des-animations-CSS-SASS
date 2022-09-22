@@ -22,13 +22,13 @@
 
 
 @mixin tablette {
-    @media (min-width: map-get($breakpoint,tablette)) and (max-width: map-get($breakpoint,desktop)){
+    @media (min-width: map-get($breakpoint,min_tablette)) and (max-width: map-get($breakpoint,max_tablette)){
         @content;
     }
 }
 
 @mixin desktop {
-    @media all and (min-width: map-get($breakpoint,desktop)){
+    @media (min-width: map-get($breakpoint,desktop)){
         @content;
     }
 }

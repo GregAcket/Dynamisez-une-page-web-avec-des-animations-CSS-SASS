@@ -1,0 +1,71 @@
+aside{
+    margin: 50px 20px 0px 20px;
+
+    @include tablette{
+        margin-top: 10px;
+    }
+
+    @include desktop{
+        margin-top: 25px;
+    }
+
+    p{
+        font-weight: 700;
+        font-size: x-large;
+        margin-bottom: 30px;
+    }
+
+    ol{
+        padding-left: 10px;
+        list-style-type: none;
+
+        @include desktop{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    li{
+        display: flex;
+        align-items: center; 
+        background-color:$color-fourth;
+        height: 75px;
+        width: 100%;
+        border-radius: 25px;
+        margin-bottom: 20px;
+        box-shadow: $color-box-shadow 0px 4px 10px 2px;
+
+        @include desktop{
+            max-width: 30%;
+        }
+
+        &:hover{
+            background-color: lighten($color-first, $amount: 36);
+            box-shadow: darken($color: $color-box-shadow, $amount: 10) 0px 4px 10px 2px;;
+
+            .fa-solid{
+                color: $color-first;
+            }
+        }
+    }
+        
+    .list_numbers{
+        @include flex_justify_align_center;
+        background-color: $color-first;
+        color: white;
+        border-radius: 25px;
+        width: 24px;
+        height: 24px;
+        margin: 0px 22px 0px -10px;
+        padding-top: 4px;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+
+    .fa-solid{
+        margin-right: 27px;
+        font-size: 18px;
+        color: $color-fifth;
+    }
+}

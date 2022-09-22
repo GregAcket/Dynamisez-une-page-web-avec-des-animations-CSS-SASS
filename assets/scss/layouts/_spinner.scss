@@ -1,0 +1,42 @@
+.container_spinner{
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    background-color:black;
+    opacity: 1;
+    animation: $animation_time linear forwards normal 2300ms disappear;
+    z-index: 2;
+}
+
+.spinner{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color:white;
+    color: black;
+    border-radius: 35px;
+    
+    &_ohmyfood{
+    padding: 5px 15px 0 55px ;
+    font-family: 'shrikhand';
+    font-size: 60px;
+    min-width: 100%;
+
+        @include desktop{
+            padding: 5px 15px 0px 70px;
+            font-size: 90px;
+        }
+    }
+}
+
+.o{
+    font-family: 'shrikhand';
+    position: absolute;
+    left: 15px;
+    animation: $animation_time linear forwards normal 300ms gradient, 1000ms linear infinite normal 800ms spinner;
+
+        @include desktop{
+            left: 10px;
+        }
+}
