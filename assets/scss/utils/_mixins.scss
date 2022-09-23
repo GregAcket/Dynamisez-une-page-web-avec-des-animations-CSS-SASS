@@ -1,9 +1,5 @@
 /* mixins */
 
-@mixin background_color ( $color: white) {
-    background-color: $color;
-}
-
 @mixin flex_justify_align_center {
     display: flex;
     justify-content: center;
@@ -15,4 +11,24 @@
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
+}
+
+@mixin overflow {
+    direction: ltr;     
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;    
+}
+
+
+@mixin tablette {
+    @media (min-width: map-get($breakpoint,min_tablette)) and (max-width: map-get($breakpoint,max_tablette)){
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: map-get($breakpoint,desktop)){
+        @content;
+    }
 }

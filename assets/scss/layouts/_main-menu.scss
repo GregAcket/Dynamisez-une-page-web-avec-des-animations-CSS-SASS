@@ -1,0 +1,8 @@
+.page_restaurant{
+    display: flex;
+    flex-direction: column;
+
+    @include tablette{
+        gap: 0px;
+    }    
+}

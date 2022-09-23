@@ -1,0 +1,13 @@
+.checkprice{
+    display: flex;
+    min-height: 100%;
+}
+
+.check{
+    border-bottom-right-radius: 13px;
+    border-top-right-radius: 13px;
+    width: 0px;
+    margin-left: 24px;
+    background-color: $color-third;
+    transition: width $animation_time;
+}

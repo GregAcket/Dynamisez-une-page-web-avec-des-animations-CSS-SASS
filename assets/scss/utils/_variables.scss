@@ -8,3 +8,9 @@ $color-fifth: darken($color-fourth, $amount: 40);
 $color-border-box-shadow: darken($color-fourth, $amount: 20);
 $color-box-shadow: darken($color-fourth, $amount: 10);
 $animation_time: 500ms;
+
+$breakpoint: (
+    min_tablette: 768px,
+    max_tablette: 991px,
+    desktop: 992px
+);

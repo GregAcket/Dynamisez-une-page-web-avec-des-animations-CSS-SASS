@@ -1,0 +1,71 @@
+/* animation disparition loading screen spinner */
+
+@keyframes disappear {
+    0%{
+    }
+    100%{
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+
+/* animation changement couleur spinner */
+
+@keyframes gradient {
+    0%{
+    }
+    100%{
+        @include background_clip;
+    }
+}
+
+
+/* animation rotation spinner */
+
+@keyframes spinner {
+    0%{
+      transform: rotate(0deg);
+    }
+    100%{
+      transform: rotate(360deg);
+    }
+}
+
+
+/* animation remplissage coeur*/
+
+@keyframes fill {
+    from{
+        height: 0px;
+        opacity: 0;
+    }
+    to{
+        height: 25px;
+        opacity: 1;
+    }
+}
+
+
+/*animation d'entrée des plats*/
+
+@keyframes move {
+    from{
+        transform: translate(0px, 10px);
+    }
+    to{
+        transform: translate(0px, 0px);
+        opacity: 1;
+    }
+}
+
+
+/* animation rotation check */
+
+@keyframes appear{
+    from{
+        opacity: 0;
+    }to{
+        opacity: 1;
+    }
+}

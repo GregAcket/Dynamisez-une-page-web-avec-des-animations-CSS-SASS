@@ -1,0 +1,36 @@
+.entree{
+    margin-bottom: 30px;
+    opacity: 0;
+    animation: 1000ms ease-out forwards normal move;
+
+
+    @include tablette{
+        max-width: 30%;
+    }
+}
+
+.plats{
+    margin-bottom: 47px;
+    opacity: 0;
+    animation: 1000ms ease-out forwards normal 300ms move;
+
+
+    @include tablette{
+        max-width: 30%;
+    }
+
+    @include desktop{
+        margin-bottom: 30px;
+    }
+}
+
+.dessert{
+    margin-bottom: 47px;
+    opacity: 0;
+    animation: 1000ms ease-out forwards normal 600ms move;
+
+
+    @include tablette{
+        max-width: 30%;
+    }
+}
