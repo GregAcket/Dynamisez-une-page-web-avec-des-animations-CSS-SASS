@@ -180,9 +180,9 @@ ul li:nth-child(1) {
   box-shadow: #dedede 0px 4px 10px 2px;
 }
 .btn--color:hover {
-  background-image: none;
-  background-color: #ff83dd;
+  opacity: 0.8;
   box-shadow: #c4c4c4 0px 4px 10px 2px;
+  transition: 500ms box-shadow, 500ms opacity;
 }
 .btn_commander {
   margin: auto;
@@ -233,6 +233,7 @@ ul li:nth-child(1) {
   box-shadow: #dedede 0px 4px 10px 2px;
 }
 .card:hover {
+  transition: 500ms box-shadow;
   box-shadow: #c4c4c4 0px 4px 10px 2px;
 }
 .card_new {
@@ -469,6 +470,7 @@ main {
   }
 }
 .menu_card:hover {
+  transition: 500ms box-shadow;
   box-shadow: #c4c4c4 0px 4px 10px 2px;
 }
 .menu_card:hover .check {
@@ -774,6 +776,7 @@ aside li {
   }
 }
 aside li:hover {
+  transition: 500ms background-color, 500ms box-shadow;
   background-color: #f4eefc;
   box-shadow: #c4c4c4 0px 4px 10px 2px;
 }

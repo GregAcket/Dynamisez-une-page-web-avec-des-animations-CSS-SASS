@@ -79,6 +79,7 @@
         }
 
         &:hover{
+            transition: $animation_time box-shadow;
             box-shadow: darken($color: $color-box-shadow, $amount: 10) 0px 4px 10px 2px;
 
             .check{

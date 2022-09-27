@@ -40,6 +40,7 @@ aside{
         }
 
         &:hover{
+            transition: $animation_time background-color, $animation_time box-shadow;
             background-color: lighten($color-first, $amount: 36);
             box-shadow: darken($color: $color-box-shadow, $amount: 10) 0px 4px 10px 2px;;
 
