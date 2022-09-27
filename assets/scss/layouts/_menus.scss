@@ -1,13 +1,6 @@
 .menu{
     box-shadow: none;
 
-    .fa-arrow-left{
-        position: absolute;
-        left: 23px;
-        color: black;
-        font-size: 20px;
-    }
-
     &_img{
         object-fit: cover;
         min-width: 100%;
